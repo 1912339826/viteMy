@@ -12,37 +12,42 @@ const routerHistory = createWebHashHistory()
 // createWebHistory history 路由
 // createMemoryHistory 带缓存 history 路由
 export const routes = [{
-    path: '/animejs',
-    component: animejs,
-    name: "animejs",
-    meta: {
-        title: 'animejs'
+        path: '/',
+        redirect: '/animejs'
     },
-    children: []
-}, {
-    path: '/FontAwesome',
-    component: FontAwesome,
-    name: "FontAwesome",
-    meta: {
-        title: 'FontAwesome'
-    },
-    children: []
-}, {
-    path: '/itemSetting',
-    component: itemSetting,
-    meta: {
-        title: 'itemSetting'
-    },
-    name: 'itemSetting',
-    children: [{
-        path: 'tailwindcss',
-        component: tailwindcss,
-        name: 'itemSettingTailwindcss',
+    {
+        path: '/animejs',
+        component: animejs,
+        name: "animejs",
         meta: {
-            title: 'itemSettingTailwindcss'
-        }
-    }]
-}]
+            title: 'animejs'
+        },
+        children: []
+    }, {
+        path: '/FontAwesome',
+        component: FontAwesome,
+        name: "FontAwesome",
+        meta: {
+            title: 'FontAwesome'
+        },
+        children: []
+    }, {
+        path: '/itemSetting',
+        component: itemSetting,
+        meta: {
+            title: 'itemSetting'
+        },
+        name: 'itemSetting',
+        children: [{
+            path: 'tailwindcss',
+            component: tailwindcss,
+            name: 'itemSettingTailwindcss',
+            meta: {
+                title: 'itemSettingTailwindcss'
+            }
+        }]
+    }
+]
 export const router = createRouter({
     history: routerHistory,
     routes
